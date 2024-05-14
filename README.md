@@ -8,11 +8,11 @@
 
 系统架构:
 
-![](\README.assets\L{KE$%4YIQ25}MU[CW4E[G.png)
+![](./README.assets/L{KE$%4YIQ25}MU[CW4E[G.png)
 
 多端操作
 
-![](\README.assets\image-20240514234328141-17157014436881.png)
+![](./README.assets/image-20240514234328141.png)
 
 ## 项目介绍
 
