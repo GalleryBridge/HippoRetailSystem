@@ -36,9 +36,54 @@
 - Spring Boot start (做API签名认证)
 - Dubbo
 - Nacos
+- Spring Cloud Alibaba
 - Spring Cloud Gateway（网关限流日志）
 
 ### 数据库表设计
 
+用户表(员工) Staff
 
+| 列名            | 类型         | 默认值            | 是否为空                         | 是否主键 | 简介                                       |
+| --------------- | ------------ | ----------------- | -------------------------------- | -------- | ------------------------------------------ |
+| accountID       | bigint       |                   | auto_increment                   | 是       | 员工ID                                     |
+| accountName     | varchar(256) |                   |                                  |          | 员工姓名                                   |
+| accountMs       | varchar(256) |                   | null                             |          | ms号(用于登录终端)                         |
+| accountPassword | varchar(512) |                   |                                  |          | 员工密码                                   |
+| gender          | tinyint      |                   | null                             |          | 性别                                       |
+| phone           | varchar(128) |                   | null                             |          | 手机号                                     |
+| department      | int          |                   |                                  |          | 部门                                       |
+| accountStatus   | int          |                   |                                  |          | 状态0-服务中                               |
+| accountRole     | int          |                   |                                  |          | 角色(站长、副站、理货(白夜班)、水产、分拣) |
+| createTime      | datetime     | CURRENT_TIMESTAMP |                                  |          | 创建时间                                   |
+| updateTime      | datetime     | CURRENT_TIMESTAMP | null on update CURRENT_TIMESTAMP |          | 更新时间                                   |
+| isDelete        | tinyint      | 0                 |                                  |          | 是否删除(逻辑)                             |
+
+商品表
+
+| 列名              | 类型          | 默认值            | 是否为空 | 是否主键 | 简介            |
+| ----------------- | ------------- | ----------------- | -------- | -------- | --------------- |
+| skuID             | bigint        | 自增              |          | 是       | 商品ID          |
+| productName       | varchar(256)  |                   | null     |          | 商品名称        |
+| productBarcode    | varchar(256)  |                   | null     |          | 商品条码        |
+| OverdueTime       | datetime      |                   | null     |          | 过期时间        |
+| storageDays       | varchar(256)  |                   | null     |          | 存储天数        |
+| productCount      | bigint        |                   | null     |          | 数量            |
+| productType       | int           |                   | null     |          | 类型(百货 生鲜) |
+| productAmount     | DECIMAL       |                   | null     |          | 金额            |
+| productStatus     | int           | 0                 |          |          | 状态(上下架)    |
+| batchNumber       | varchar(256)  |                   | null     |          | 批次号          |
+| producrUrl        | varchar(1024) |                   | null     |          | 商品图片        |
+| supplier          | varchar(256)  |                   | null     |          | 供应商          |
+| producingArea     | varchar(256)  |                   | null     |          | 产地            |
+| storageConditions | int           |                   | null     |          | 存储条件        |
+| specifications    | int           |                   | null     |          | 规格            |
+| createTime        | datetime      | CURRENT_TIMESTAMP |          |          | 创建时间        |
+| updateTime        | datetime      | CURRENT_TIMESTAMP |          |          | 更新时间        |
+| isDelete          | tinint        | 0                 |          |          | 是否删除        |
+
+订单表
+
+
+
+采购表
 
